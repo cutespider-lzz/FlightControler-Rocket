@@ -51,6 +51,7 @@ extern SD_HandleTypeDef hsd1;
 extern TIM_HandleTypeDef htim2;
 extern TIM_HandleTypeDef htim3;
 extern TIM_HandleTypeDef htim4;
+extern TIM_HandleTypeDef htim6;
 
 extern UART_HandleTypeDef huart5;
 extern UART_HandleTypeDef huart7;
@@ -99,6 +100,8 @@ void Error_Handler(void);
 #define BAT1_GPIO_Port GPIOD
 #define SDIO_Pin GPIO_PIN_15
 #define SDIO_GPIO_Port GPIOA
+#define TRIGGER_Pin GPIO_PIN_5
+#define TRIGGER_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 

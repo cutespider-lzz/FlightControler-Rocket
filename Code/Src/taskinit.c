@@ -2,6 +2,8 @@
 #include "cmsis_os.h"
 #include "stdio.h"
 
+EventGroupHandle_t TaskEvent; 
+
 void TaskInit(void)
 {
 	//Create LEDTwinkTask
@@ -11,13 +13,14 @@ void TaskInit(void)
 	{
 		while(1) ;
 	}
-	//Create ReceiverTask
-	ReceiverTask_Ret = xTaskCreate((TaskFunction_t)ReceiverTask,"ReceiverTask",256,(void *)1,ReceiverTask_Prio,(TaskHandle_t *)(&ReceiverTask_TCB));
-	if(ReceiverTask_Ret == pdPASS) ;
-	else
-	{
-		while(1) ;
-	}
+//	//Create ReceiverTask
+//	ReceiverTask_Ret = xTaskCreate((TaskFunction_t)ReceiverTask,"ReceiverTask",256,(void *)1,ReceiverTask_Prio,(TaskHandle_t *)(&ReceiverTask_TCB));
+//	if(ReceiverTask_Ret == pdPASS) ;
+//	else
+//	{
+//		while(1) ;
+//	}
+	
 	//Create NavigationTask
 	NavigationTask_Ret = xTaskCreate((TaskFunction_t)NavigationTask,"NavigationTask",512,(void *)1,NavigationTask_Prio,(TaskHandle_t *)(&NavigationTask_TCB));
 	if(NavigationTask_Ret == pdPASS) ;
@@ -55,6 +58,28 @@ void TaskInit(void)
 		while(1) ;
 	}
 	
+	//Create Timer
+	TimerTask_Ret = xTaskCreate((TaskFunction_t)TimerTask,"TimerTask",256,(void *)1,TimerTask_Prio,(TaskHandle_t *)(&TimerTask_TCB));
+	if(TimerTask_Ret == pdPASS) ;
+	else
+	{
+		while(1) ;
+	}
+	
+	//Create RocketFlight
+	RocketFlight_Ret = xTaskCreate((TaskFunction_t)RocketFlight,"RocketFlight",256,(void *)1,RocketFlight_Prio,(TaskHandle_t *)(&RocketFlight_TCB));
+	if(RocketFlight_Ret == pdPASS) ;
+	else
+	{
+		while(1) ;
+	}
+	
+
+	
+
+	
+	
+	
 	vTaskStartScheduler();
 }
 
@@ -72,26 +97,26 @@ void LEDTwinkTask(void *pvParameters)
 	}
 }
 
-//ReceiverTask函数声明
-BaseType_t ReceiverTask_Ret;
-UBaseType_t ReceiverTask_Prio=18;
-TaskHandle_t ReceiverTask_TCB;
+////ReceiverTask函数声明
+//BaseType_t ReceiverTask_Ret;
+//UBaseType_t ReceiverTask_Prio=18;
+//TaskHandle_t ReceiverTask_TCB;
 
-void ReceiverTask(void *pvParameters)
-{
-	ReceiverSemaphore = xSemaphoreCreateBinary();
-	HAL_UART_Receive_DMA(&huart5,ReceiverReceiveBuff,25);
-	__HAL_UART_ENABLE_IT(&huart5,UART_IT_IDLE);
-	while(1)
-	{
-		xSemaphoreTake(ReceiverSemaphore,100);
-		ReceiverRet = ReceiverDataConvert(ReceiverFifoBuff);
-		if(ReceiverRet == Receiver_OK)
-		{
-			ReceiverSolution();
-		}
-	}
-}
+//void ReceiverTask(void *pvParameters)
+//{
+//	ReceiverSemaphore = xSemaphoreCreateBinary();
+//	HAL_UART_Receive_DMA(&huart5,ReceiverReceiveBuff,25);
+//	__HAL_UART_ENABLE_IT(&huart5,UART_IT_IDLE);
+//	while(1)
+//	{
+//		xSemaphoreTake(ReceiverSemaphore,100);
+//		ReceiverRet = ReceiverDataConvert(ReceiverFifoBuff);
+//		if(ReceiverRet == Receiver_OK)
+//		{
+//			ReceiverSolution();
+//		}
+//	}
+//}
 
 //NavigationTask函数声明
 BaseType_t NavigationTask_Ret;
@@ -201,3 +226,53 @@ void ExtfSendTask(void *pvParameters)
 }
 
 
+
+//Timer函数声明
+BaseType_t TimerTask_Ret;
+UBaseType_t TimerTask_Prio=3;
+TaskHandle_t TimerTask_TCB;
+
+void TimerTask(void *pvParameters)
+{
+	xEventGroupClearBits(TaskEvent,0xFFFF);
+	while(1)
+	{
+		if(HAL_GPIO_ReadPin(TRIGGER_GPIO_Port,TRIGGER_Pin)==GPIO_PIN_RESET)
+		{
+			__HAL_TIM_SET_COUNTER(&htim6,0);
+			ControlTime = 0;
+//					FileCreate();
+			HAL_TIM_Base_Start_IT(&htim6);
+			xEventGroupSetBits(TaskEvent,0xFF);
+			vTaskSuspend(NULL);
+		}
+		vTaskDelay(10);
+	}
+}
+
+//RocketFlight函数声明
+BaseType_t RocketFlight_Ret;
+UBaseType_t RocketFlight_Prio=20;
+TaskHandle_t RocketFlight_TCB;
+
+void RocketFlight(void *pvParameters)
+{
+	xEventGroupWaitBits(TaskEvent,0x08,pdFALSE,pdTRUE,portMAX_DELAY);
+	while(1)
+	{
+		xSemaphoreTake(ControlSemaphore,portMAX_DELAY);
+		
+		if(ControlTime >= 5) HAL_GPIO_WritePin(BAT1_GPIO_Port,BAT1_Pin,GPIO_PIN_SET);//5s一口爆炸螺栓点燃
+		if(ControlTime >= 10) HAL_GPIO_WritePin(BAT2_GPIO_Port,BAT2_Pin,GPIO_PIN_SET);//10s二口爆炸螺栓点燃
+		if(ControlTime <= 20) //飞控运行时间
+		{
+			MYZControl();//舵机控制程序运行
+			
+		}
+		else 
+		{
+			HAL_TIM_Base_Stop_IT(&htim6);
+			vTaskSuspend(NULL);
+		}
+	}
+}
