@@ -1,8 +1,8 @@
 fdi\navigation.o: ..\Code\Src\navigation.c
 fdi\navigation.o: ../Code/Inc/navigation.h
 fdi\navigation.o: ../HardWare/FDILink/FDILink.h
-fdi\navigation.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-fdi\navigation.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+fdi\navigation.o: D:\Keilv5\ARM\ARMCC\Bin\..\include\stdint.h
+fdi\navigation.o: D:\Keilv5\ARM\ARMCC\Bin\..\include\string.h
 fdi\navigation.o: ../Core/Inc/main.h
 fdi\navigation.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h
 fdi\navigation.o: ../Core/Inc/stm32h7xx_hal_conf.h
@@ -18,8 +18,8 @@ fdi\navigation.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 fdi\navigation.o: ../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h
 fdi\navigation.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h
 fdi\navigation.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-fdi\navigation.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-fdi\navigation.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+fdi\navigation.o: D:\Keilv5\ARM\ARMCC\Bin\..\include\stddef.h
+fdi\navigation.o: D:\Keilv5\ARM\ARMCC\Bin\..\include\math.h
 fdi\navigation.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h
 fdi\navigation.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h
 fdi\navigation.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h

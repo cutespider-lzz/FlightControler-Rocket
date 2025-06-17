@@ -70,11 +70,5 @@ extern TaskHandle_t TimerTask_TCB;
 
 void TimerTask(void *pvParameters);
 
-//RocketFlight函数声明
-extern BaseType_t RocketFlight_Ret;
-extern UBaseType_t RocketFlight_Prio;
-extern TaskHandle_t RocketFlight_TCB;
-
-void RocketFlight(void *pvParameters);
 
 #endif

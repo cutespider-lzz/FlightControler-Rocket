@@ -8,7 +8,7 @@ fdi\extf.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h
 fdi\extf.o: ../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h
 fdi\extf.o: ../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h
 fdi\extf.o: ../Drivers/CMSIS/Include/core_cm7.h
-fdi\extf.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+fdi\extf.o: D:\Keilv5\ARM\ARMCC\Bin\..\include\stdint.h
 fdi\extf.o: ../Drivers/CMSIS/Include/cmsis_version.h
 fdi\extf.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 fdi\extf.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -16,8 +16,8 @@ fdi\extf.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 fdi\extf.o: ../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h
 fdi\extf.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h
 fdi\extf.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-fdi\extf.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-fdi\extf.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+fdi\extf.o: D:\Keilv5\ARM\ARMCC\Bin\..\include\stddef.h
+fdi\extf.o: D:\Keilv5\ARM\ARMCC\Bin\..\include\math.h
 fdi\extf.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h
 fdi\extf.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h
 fdi\extf.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h
@@ -47,9 +47,9 @@ fdi\extf.o: ../HardWare/FDILink/FDI_send.h
 fdi\extf.o: ../HardWare/FDILink/FDI_config.h
 fdi\extf.o: ../HardWare/FDILink/FDI_Search_Function.h
 fdi\extf.o: ../Core/Inc/main.h
-fdi\extf.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+fdi\extf.o: D:\Keilv5\ARM\ARMCC\Bin\..\include\stdio.h
 fdi\extf.o: ../Code/Inc/navigation.h
-fdi\extf.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+fdi\extf.o: D:\Keilv5\ARM\ARMCC\Bin\..\include\string.h
 fdi\extf.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 fdi\extf.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 fdi\extf.o: ../Core/Inc/FreeRTOSConfig.h

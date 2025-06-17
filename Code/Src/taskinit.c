@@ -66,14 +66,7 @@ void TaskInit(void)
 		while(1) ;
 	}
 	
-	//Create RocketFlight
-	RocketFlight_Ret = xTaskCreate((TaskFunction_t)RocketFlight,"RocketFlight",256,(void *)1,RocketFlight_Prio,(TaskHandle_t *)(&RocketFlight_TCB));
-	if(RocketFlight_Ret == pdPASS) ;
-	else
-	{
-		while(1) ;
-	}
-	
+
 
 	
 
@@ -176,7 +169,18 @@ void ControlTask(void *pvParameters)
 	while(1)
 	{
 		xSemaphoreTake(ControlSemaphore,portMAX_DELAY);
-		MYZControl();
+		
+		if(ControlTime >= 5) HAL_GPIO_WritePin(BAT1_GPIO_Port,BAT1_Pin,GPIO_PIN_SET);//5s一口爆炸螺栓点燃
+		if(ControlTime >= 10) HAL_GPIO_WritePin(BAT2_GPIO_Port,BAT2_Pin,GPIO_PIN_SET);//10s二口爆炸螺栓点燃
+		if(ControlTime <= 20) //飞控运行时间
+		{
+			MYZControl();//舵机控制程序运行
+		}
+		else 
+		{
+			HAL_TIM_Base_Stop_IT(&htim6);
+			vTaskSuspend(NULL);
+		}
 	}
 }
 	
@@ -234,7 +238,7 @@ TaskHandle_t TimerTask_TCB;
 
 void TimerTask(void *pvParameters)
 {
-	xEventGroupClearBits(TaskEvent,0xFFFF);
+//	xEventGroupClearBits(TaskEvent,0xFFFF);
 	while(1)
 	{
 		if(HAL_GPIO_ReadPin(TRIGGER_GPIO_Port,TRIGGER_Pin)==GPIO_PIN_RESET)
@@ -243,36 +247,10 @@ void TimerTask(void *pvParameters)
 			ControlTime = 0;
 //					FileCreate();
 			HAL_TIM_Base_Start_IT(&htim6);
-			xEventGroupSetBits(TaskEvent,0xFF);
+//			xEventGroupSetBits(TaskEvent,0xFF);
 			vTaskSuspend(NULL);
 		}
 		vTaskDelay(10);
 	}
 }
 
-//RocketFlight函数声明
-BaseType_t RocketFlight_Ret;
-UBaseType_t RocketFlight_Prio=20;
-TaskHandle_t RocketFlight_TCB;
-
-void RocketFlight(void *pvParameters)
-{
-	xEventGroupWaitBits(TaskEvent,0x08,pdFALSE,pdTRUE,portMAX_DELAY);
-	while(1)
-	{
-		xSemaphoreTake(ControlSemaphore,portMAX_DELAY);
-		
-		if(ControlTime >= 5) HAL_GPIO_WritePin(BAT1_GPIO_Port,BAT1_Pin,GPIO_PIN_SET);//5s一口爆炸螺栓点燃
-		if(ControlTime >= 10) HAL_GPIO_WritePin(BAT2_GPIO_Port,BAT2_Pin,GPIO_PIN_SET);//10s二口爆炸螺栓点燃
-		if(ControlTime <= 20) //飞控运行时间
-		{
-			MYZControl();//舵机控制程序运行
-			
-		}
-		else 
-		{
-			HAL_TIM_Base_Stop_IT(&htim6);
-			vTaskSuspend(NULL);
-		}
-	}
-}

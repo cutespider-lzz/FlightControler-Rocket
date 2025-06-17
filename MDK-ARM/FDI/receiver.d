@@ -8,7 +8,7 @@ fdi\receiver.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h
 fdi\receiver.o: ../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h
 fdi\receiver.o: ../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h
 fdi\receiver.o: ../Drivers/CMSIS/Include/core_cm7.h
-fdi\receiver.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+fdi\receiver.o: D:\Keilv5\ARM\ARMCC\Bin\..\include\stdint.h
 fdi\receiver.o: ../Drivers/CMSIS/Include/cmsis_version.h
 fdi\receiver.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 fdi\receiver.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -16,8 +16,8 @@ fdi\receiver.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 fdi\receiver.o: ../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h
 fdi\receiver.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h
 fdi\receiver.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-fdi\receiver.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-fdi\receiver.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+fdi\receiver.o: D:\Keilv5\ARM\ARMCC\Bin\..\include\stddef.h
+fdi\receiver.o: D:\Keilv5\ARM\ARMCC\Bin\..\include\math.h
 fdi\receiver.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h
 fdi\receiver.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h
 fdi\receiver.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h
@@ -62,7 +62,7 @@ fdi\receiver.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 fdi\receiver.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 fdi\receiver.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 fdi\receiver.o: ../HardWare/SIYI/siyi.h
-fdi\receiver.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+fdi\receiver.o: D:\Keilv5\ARM\ARMCC\Bin\..\include\string.h
 fdi\receiver.o: ../Code/Inc/control.h
 fdi\receiver.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 fdi\receiver.o: ../Code/Inc/navigation.h

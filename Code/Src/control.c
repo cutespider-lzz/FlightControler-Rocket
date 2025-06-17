@@ -3,7 +3,7 @@
 float ControlTime;
 const float ControlDt = 0.01f;
 
-SemaphoreHandle_t ControlSemaphore;//控制模块二值信号量
+SemaphoreHandle_t ControlSemaphore=NULL;//控制模块二值信号量
 BaseType_t ControlHigherTaskSwitch;
 
 //double Kp_roll=1,Kd_roll=0.2,Kp_pitch=2,Kd_pitch=0.1,Ki_pitch = 1,Kp_yaw=1.5,Kd_yaw=0.1;//姿态控制参数

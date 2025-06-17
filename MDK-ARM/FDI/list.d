@@ -1,8 +1,8 @@
 fdi\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/list.c
-fdi\list.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+fdi\list.o: D:\Keilv5\ARM\ARMCC\Bin\..\include\stdlib.h
 fdi\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-fdi\list.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-fdi\list.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+fdi\list.o: D:\Keilv5\ARM\ARMCC\Bin\..\include\stddef.h
+fdi\list.o: D:\Keilv5\ARM\ARMCC\Bin\..\include\stdint.h
 fdi\list.o: ../Core/Inc/FreeRTOSConfig.h
 fdi\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 fdi\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h

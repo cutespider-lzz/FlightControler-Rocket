@@ -12,7 +12,7 @@ fdi\sd_diskio.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h
 fdi\sd_diskio.o: ../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h
 fdi\sd_diskio.o: ../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h
 fdi\sd_diskio.o: ../Drivers/CMSIS/Include/core_cm7.h
-fdi\sd_diskio.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+fdi\sd_diskio.o: D:\Keilv5\ARM\ARMCC\Bin\..\include\stdint.h
 fdi\sd_diskio.o: ../Drivers/CMSIS/Include/cmsis_version.h
 fdi\sd_diskio.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 fdi\sd_diskio.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -20,8 +20,8 @@ fdi\sd_diskio.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 fdi\sd_diskio.o: ../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h
 fdi\sd_diskio.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h
 fdi\sd_diskio.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-fdi\sd_diskio.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-fdi\sd_diskio.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+fdi\sd_diskio.o: D:\Keilv5\ARM\ARMCC\Bin\..\include\stddef.h
+fdi\sd_diskio.o: D:\Keilv5\ARM\ARMCC\Bin\..\include\math.h
 fdi\sd_diskio.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h
 fdi\sd_diskio.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h
 fdi\sd_diskio.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h
@@ -68,5 +68,5 @@ fdi\sd_diskio.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 fdi\sd_diskio.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 fdi\sd_diskio.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 fdi\sd_diskio.o: ../FATFS/Target/sd_diskio.h
-fdi\sd_diskio.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-fdi\sd_diskio.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+fdi\sd_diskio.o: D:\Keilv5\ARM\ARMCC\Bin\..\include\string.h
+fdi\sd_diskio.o: D:\Keilv5\ARM\ARMCC\Bin\..\include\stdio.h
