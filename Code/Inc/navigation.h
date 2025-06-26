@@ -1,0 +1,62 @@
+#ifndef __NAVIGATION_H 
+#define __NAVIGATION_H
+
+#include "FDILink.h"
+#include "string.h"
+#include "main.h"
+#include "fdilink_decode.h"
+#include "FDI_config.h"
+#include "cmsis_os.h"
+
+#define NavDMARecLength 500
+
+extern uint8_t NavRecBuff[];
+extern uint8_t NavRecFifoBuff[];
+extern uint16_t NavRecLength;
+extern uint16_t NavFifoLength;
+
+extern FDILink_VersionData_Packet_t VersionData;
+extern FDILink_IMUData_Packet_t IMUData;
+extern FDILink_AHRSData_Packet_t AHRSData;
+extern FDILink_INSGPSData_Packet_t INSGPSData;
+extern System_State_Packet_t System_State_data;
+extern Unix_Time_Packet_t TimeData;
+extern Formatted_Time_Packet_t FTimeData;
+extern Position_Standard_Deviation_Packet_t Position_Standard_Deviation_data;
+extern Velocity_Standard_Deviation_Packet_t Velocity_Standard_Deviation_data;
+extern Euler_Orientation_Standard_Deviation_Packet_t Euler_Orientation_Standard_Deviation_data;
+extern Quaternion_Orientation_Standard_Deviation_Packet_t Quaternion_Orientation_Standard_Deviation_data;
+extern Raw_Sensors_Packet_t Raw_Sensors_data;
+extern Raw_GNSS_Packet_t Raw_GNSS_data;
+extern Satellites_Packet_t Satellites_data;
+extern Detailed_Satellites_Packet_t Detailed_Satellites_data;
+extern Geodetic_Position_Packet_t Geodetic_Position_data;
+extern ECEF_Position_Packet_t ECEF_Position_data;
+extern UTM_Position_Packet_t UTM_Position_data;
+extern NED_Velocity_Packet_t NED_Velocity_data;
+extern Body_Velocity_Packet_t Body_Velocity_data;
+extern Acceleration_Packet_t Acceleration_data;
+extern Body_Acceleration_Packet_t Body_Acceleration_data;
+extern Euler_Orientation_Packet_t Euler_Orientation_data;
+extern Quaternion_Orientation_Packet_t Quaternion_Orientation_data;
+extern DCM_Orientation_Packet_t DCM_Orientation_data;
+extern Angular_Velocity_Packet_t Angular_Velocity_data;
+extern Angular_Acceleration_Packet_t Angular_Acceleration_data;
+extern External_Position_And_Velocity_Packet_t External_Position_And_Velocity_data;
+extern External_Position_Packet_t External_Position_data;
+extern External_Velocity_Packet_t External_Velocity_data;
+extern External_Body_Velocity_Packet_t External_Body_Velocity_data;
+extern External_Heading_Packet_t External_Heading_data;
+extern External_Time_Packet_t External_Time_data;
+extern External_Depth_Packet_t External_Depth_data;
+extern External_Pitot_Pressure_Packet_t External_Pitot_Pressure_data;
+
+extern FDILink_Status_t _FDILink;
+
+extern QueueHandle_t NavQueue;
+extern SemaphoreHandle_t NavSemaphore;//导航任务二值信号量
+extern BaseType_t NavHigherTaskSwitch;
+
+void NavigationSolution(void);
+	
+#endif

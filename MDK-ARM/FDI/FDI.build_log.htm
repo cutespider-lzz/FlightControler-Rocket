@@ -1,0 +1,67 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.30.0.0
+Copyright (C) 2020 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: asrst asrst, asrst, LIC=SDA0P-MZ731-QDYKD-82K2V-E5BIP-Y5TZE
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.30.0.0
+Toolchain Path:  D:\Keilv5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.30.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.7.0
+Dialog DLL:      TCM.DLL V1.42.0.0
+ 
+<h2>Project:</h2>
+C:\Users\user\Documents\GitHub\FlightControler-FixedWing - AI\MDK-ARM\FlightControler.uvprojx
+Project File Date:  06/27/2025
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'D:\Keilv5\ARM\ARMCC\Bin'
+Build target 'FlightControler'
+compiling control.c...
+..\Code\Src\control.c(111): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  	pitch = AHRSData.Pitch*57.3;
+..\Code\Src\control.c(112): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  	roll = AHRSData.Roll*57.3;
+..\Code\Src\control.c(113): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  	yaw = AHRSData.Heading*57.3;
+..\Code\Src\control.c: 3 warnings, 0 errors
+linking...
+Program Size: Code=56576 RO-data=4128 RW-data=372 ZI-data=37356  
+FromELF: creating hex file...
+"FDI\FDI.axf" - 0 Error(s), 3 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.7.0.pack
+                ARM.CMSIS.5.7.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.4.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32H7xx_DFP.3.1.1.pack
+                Keil.STM32H7xx_DFP.3.1.1
+                STMicroelectronics STM32H7 Series Device Support and Examples
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_FlightControler
+  D:\Keilv5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include
+  D:\Keilv5\ARM\PACK\Keil\STM32H7xx_DFP\3.1.1\Drivers\CMSIS\Device\ST\STM32H7xx\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.4.0
+Build Time Elapsed:  00:00:03
+</pre>
+</body>
+</html>
