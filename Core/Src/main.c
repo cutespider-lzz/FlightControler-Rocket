@@ -86,6 +86,10 @@ static void MX_UART7_Init(void);
 static void MX_TIM6_Init(void);
 void StartDefaultTask(void const * argument);
 
+
+
+
+
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */

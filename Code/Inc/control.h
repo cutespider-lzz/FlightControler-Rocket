@@ -29,6 +29,9 @@ typedef enum
 
 extern float ControlTime;
 extern const float ControlDt;
+extern volatile double gz_last;
+extern double gz_prev;
+extern double gy_prev;
 
 extern SemaphoreHandle_t ControlSemaphore;//控制模块二值信号量
 extern BaseType_t ControlHigherTaskSwitch;
@@ -48,6 +51,7 @@ void ControlInit(void);
 void ControlStop(void);
 void ControlUpdata(void);
 void MYZControl(void);
+
 
 	
 #endif

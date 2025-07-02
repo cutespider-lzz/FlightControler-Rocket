@@ -1,6 +1,8 @@
 #include "taskinit.h"
 #include "cmsis_os.h"
 #include "stdio.h"
+#include "main.h"
+#include "navigation.h"
 
 void TaskInit(void)
 {
@@ -156,7 +158,9 @@ void ControlTask(void *pvParameters)
 	HAL_TIM_PWM_Start(&htim4,TIM_CHANNEL_2);
 	HAL_TIM_PWM_Start(&htim4,TIM_CHANNEL_3);
 	HAL_TIM_PWM_Start(&htim4,TIM_CHANNEL_4);
+	
 
+	
 	 while(1) {
 		xSemaphoreTake(ControlSemaphore, portMAX_DELAY);
 		if(ControlTime >= 5) HAL_GPIO_WritePin(BAT1_GPIO_Port,BAT1_Pin,GPIO_PIN_SET);//5s一口爆炸螺栓点燃
@@ -173,6 +177,7 @@ void ControlTask(void *pvParameters)
 		{
 			MYZControl();  // 调用控制函数
     }
+		
   }
 }
 
