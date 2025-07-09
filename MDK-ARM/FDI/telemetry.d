@@ -64,3 +64,7 @@ fdi\telemetry.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 fdi\telemetry.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 fdi\telemetry.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 fdi\telemetry.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
+fdi\telemetry.o: ../Code/Inc/control.h
+fdi\telemetry.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+fdi\telemetry.o: ../Code/Inc/receiver.h
+fdi\telemetry.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h

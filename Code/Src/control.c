@@ -22,7 +22,7 @@ double dservo_pitch,dservo_yaw,dgz,dgy,gz=0,gy=0;
 double rou=1.17,V,V2,Q,g = 9.8;//西安的密度
 double Ncy,Ny,Ncz,Nz;//指令过载和实际
 double theta,psi,dtheta,dpsi;//定义弹道倾角和弹道偏角
-double x,y,z,dx,dy,dz,xt=212,yt=0,zt=0,dxt=0,dyt=0,dzt=0;
+double x,y,z,dx,dy,dz,xt=600,yt=0,zt=100,dxt=0,dyt=0,dzt=0;
 double xr,yr,zr,Vrx,Vry,Vrz,dqgamma,dqlambda,r;
 double Q_sample[6] = {14905.8000000000,13593.9883193053,10989.4013774509,9655.79019220484,3611.48649906317,1403.77471486764};//速度递减
 double Kz1_sample[6] = {0.014902219037634,0.014070112039108,0.011820685724419,0.010192988309790,-0.012510685943559,-0.070230653720901};//动压正相关
@@ -30,7 +30,7 @@ double Kz2_sample[6] = {67.980028630672170,71.846636265750860,84.743776691322380
 double Kz3_sample[6] = {-0.073933754626083,-0.078436663810936,-0.090433487094310,-0.099085094883749,-0.248241327266784,-2.054362661488793};//动压正相关
 double Ky1_sample[6] = {0.014902219037634,0.014070112039108,0.011820685724419,0.010192988309790,-0.012510685943559,-0.070230653720901};//动压正相关
 double Ky2_sample[6] = {67.980028630672170,71.846636265750860,84.743776691322380,97.421037488305560,-65.017151859481220,-3.906321148451361};
-double Ky3_sample[6] = {-0.073933754626083,-0.078436663810936,-0.090433487094310,-0.099085094883749,-0.248241327266784,-2.054362661488793};//动压正相关
+double Ky3_sample[6] = {0.104588644480277,0.110265534580597,0.125069071746105,0.135490315734463,0.299380689722236,2.104333751235660};//动压正相关
 double Kx1_sample[6] = {-0.024268090412232,-0.025367203980571,-0.028089290670664,-0.029878487991067,-0.047398332746910,-0.072392092009083};//动压正相关
 double Kx2_sample[6] = {-5.496404707182840,-5.517173627413768,-5.569263603626163,-5.604020735260854,-5.968338299584944,-6.581527941884852};//动压正相关
 double servo_roll=0,servo_pitch=0,servo_yaw=0,servo_pitchtest,servo_yawtest;//对应通道角度
@@ -92,8 +92,9 @@ void ControlUpdata(void) {
 void ServoSet(ServoChannel channel,double angle)//
 {
 	//漫游者舵机参数
-	uint8_t ServoDirection[8] = {1,0,0,0,1,0,0,0};
-	int16_t ServoOffset[8] = {0,100,0,-150,0,120,0,0};
+	uint8_t ServoDirection[8] = {0,0,0,0,0,0,0,0};
+//	int16_t ServoOffset[8] = {0,190,0,-210,0,0,0,0};//一号
+	int16_t ServoOffset[8] = {0,0,0,0,0,0,0,0};
 	int16_t angle_int16;
 	switch(channel)
 	{
@@ -175,30 +176,36 @@ void MYZControl(void)
 
 	//北东地坐标系直接对应-z,x,-y
 	
-	V2 = INSGPSData.Velocity_Down*INSGPSData.Velocity_Down+INSGPSData.Velocity_East*INSGPSData.Velocity_East+INSGPSData.Velocity_North*INSGPSData.Velocity_North;
-//	V = sqrt(V2);
+	V2 = NED_Velocity_data.Velocity_down * NED_Velocity_data.Velocity_down + NED_Velocity_data.Velocity_east * NED_Velocity_data.Velocity_east + NED_Velocity_data.Velocity_north * NED_Velocity_data.Velocity_north;
+	V = sqrt(V2);
 	Q = 0.5*rou*V2;
 	
-//	x = INSGPSData.Location_East;//东
-//	y = -INSGPSData.Location_Down;//天
-//	z = -INSGPSData.Location_North;//南
-//	dx = INSGPSData.Velocity_East;
-//	dy = -INSGPSData.Velocity_Down;
-//	dz = -INSGPSData.Velocity_North;
+	x = enu.east;//东
+	y = enu.up;//天
+	z = -enu.north;//南
+	dx = NED_Velocity_data.Velocity_east;
+	dy = -NED_Velocity_data.Velocity_down;
+	dz = -NED_Velocity_data.Velocity_north;
 /////////////////////////////////////////////////////测试用——start
-	x = 0;//东
-	y = 260;//天
+	x = 350;//东
+	y = 254.64;//天
 	z = 0;//南
-	dx = 46;
-	dy = 0;
+	theta = 0.2628;
+	V = 50.7571;
+	
+	dx = V*cos(theta);
+	dy = V*sin(theta);
 	dz = 0;
-	V = sqrt(dx*dx+dy*dy+dz*dz);
-	Ny=-0.5844;
+	
+	Ny=0.0097;
 	Nz=0;
-	gz = 0;
-	dgz = 0;
+	gz = -0.1844;
+	dgz = -0.0357;
 	gy = 0;
 	dgy = 0;
+	V2 = V*V;
+	Q = 0.5*rou*V2;
+	
 /////////////////////////////////////////////////////测试用——end
 	theta=atanf(dy/dx);//弧度制
 
@@ -241,21 +248,26 @@ void MYZControl(void)
 	Ky3 = linear_interp(Q_sample,Ky3_sample,6,Q);
 	Kydc = 1-g/(Ky3*V)*cosf(theta);
 	dservo_yaw = Ky1*Ky2*Ky3*(Kydc*Ncz-Nz)-Ky1*Ky2*gy-Ky1*dgy;
+	if(ControlTime > 0)
+	{
 	servo_yaw = servo_yaw + dservo_yaw*ControlDt;
-	servo_yaw = servo_yaw;
-	servo_yawtest = servo_yaw;
-	servo_yaw = servo_yaw>16/57.3?16/57.3:servo_yaw;
-	servo_yaw = servo_yaw<-16/57.3?-16/57.3:servo_yaw;
-	
+	}
+	else
+	{
+	servo_yaw = 0;
+	}
+//	servo_yaw = servo_yaw>16/57.3?16/57.3:servo_yaw;
+//	servo_yaw = servo_yaw<-16/57.3?-16/57.3:servo_yaw;
+
 	
 /////////////////////////////////////////////////////测试用——start	
 
-	
-	servo_pitch = 0;
-	servo_yaw = 0;
+//	
+//	servo_pitch = 0;
+//	servo_yaw = 0;
 //	servo_roll = 0;
 ///////////////////////////////////////////////////测试用——end
-	servo_1 = (servo_roll+servo_yaw)*57.3;
+	servo_1 = (servo_roll-servo_yaw)*57.3;
 	servo_2 = (servo_roll+servo_pitch)*57.3;
 	servo_3 = (servo_roll+servo_yaw)*57.3;
 	servo_4 = (servo_roll-servo_pitch)*57.3;

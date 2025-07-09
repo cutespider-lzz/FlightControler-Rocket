@@ -118,7 +118,7 @@ void NavigationTask(void *pvParameters)
 	{
 		xSemaphoreTake(NavSemaphore,portMAX_DELAY);
 		NavigationSolution();
-
+		LocalCcoordinate();
 	}
 
 //	while(1)
@@ -193,7 +193,8 @@ TaskHandle_t TimerCheckerTask_TCB;
 void TimerCheckerTask(void *pvParameters)
 {
     static uint8_t lastTriggerState = GPIO_PIN_RESET; // 初始化为低电平
-    
+    static float judge = 1;
+	
     while(1)
     {
         uint8_t currentState = HAL_GPIO_ReadPin(TRIGGER_GPIO_Port, TRIGGER_Pin);
@@ -203,12 +204,13 @@ void TimerCheckerTask(void *pvParameters)
 
         
         // 2. 检测下降沿（高->低）
-        if((lastTriggerState == GPIO_PIN_SET) && (currentState == GPIO_PIN_RESET))
+        if((lastTriggerState == GPIO_PIN_SET) && (currentState == GPIO_PIN_RESET) && judge)
         {
             // 触发ControlTime计时
 						ControlTime = 0;
             __HAL_TIM_SET_COUNTER(&htim6, 0);
             HAL_TIM_Base_Start_IT(&htim6);
+						judge = 0;
         }
         
         // 更新状态记录

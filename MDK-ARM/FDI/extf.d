@@ -64,3 +64,7 @@ fdi\extf.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 fdi\extf.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 fdi\extf.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 fdi\extf.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
+fdi\extf.o: ../Code/Inc/control.h
+fdi\extf.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+fdi\extf.o: ../Code/Inc/receiver.h
+fdi\extf.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h

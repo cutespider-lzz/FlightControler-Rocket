@@ -32,6 +32,8 @@ extern const float ControlDt;
 extern volatile double gz_last;
 extern double gz_prev;
 extern double gy_prev;
+extern double Ny,Nz;
+extern double gy_prev;
 
 extern SemaphoreHandle_t ControlSemaphore;//控制模块二值信号量
 extern BaseType_t ControlHigherTaskSwitch;

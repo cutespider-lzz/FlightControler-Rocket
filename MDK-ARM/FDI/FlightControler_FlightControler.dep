@@ -1,7 +1,7 @@
 Dependencies for Project 'FlightControler', Target 'FlightControler': (DO NOT MODIFY !)
 CompilerVersion: 5060750::V5.06 update 6 (build 750)::ARMCC
 F (startup_stm32h743xx.s)(0x685D7195)(--cpu Cortex-M7.fp.dp -g --apcs=interwork -I ../Drivers/CMSIS/Include-I.\RTE\_FlightControler-ID:\Keilv5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keilv5\ARM\PACK\Keil\STM32H7xx_DFP\3.1.1\Drivers\CMSIS\Device\ST\STM32H7xx\Include--pd "__UVISION_VERSION SETA 530" --pd "_RTE_ SETA 1" --pd "STM32H743xx SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32h743xx.lst --xref -o fdi\startup_stm32h743xx.o --depend fdi\startup_stm32h743xx.d)
-F (../Core/Src/main.c)(0x6864F75D)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../HardWare/FDILink -I ../FATFS/Target -I ../FATFS/App -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FatFs/src -I ../Code/Inc -I ../HardWare/SIYI-I.\RTE\_FlightControler-ID:\Keilv5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keilv5\ARM\PACK\Keil\STM32H7xx_DFP\3.1.1\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx-o fdi\main.o --omf_browse fdi\main.crf --depend fdi\main.d)
+F (../Core/Src/main.c)(0x686E7276)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../HardWare/FDILink -I ../FATFS/Target -I ../FATFS/App -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FatFs/src -I ../Code/Inc -I ../HardWare/SIYI-I.\RTE\_FlightControler-ID:\Keilv5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keilv5\ARM\PACK\Keil\STM32H7xx_DFP\3.1.1\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx-o fdi\main.o --omf_browse fdi\main.crf --depend fdi\main.d)
 I (../Core/Inc/main.h)(0x685D7381)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x685BC9C6)
 I (../Core/Inc/stm32h7xx_hal_conf.h)(0x68452BB9)
@@ -73,9 +73,9 @@ I (../FATFS/Target/sd_diskio.h)(0x68452BBA)
 I (../Code/Inc/taskinit.h)(0x68651C42)
 I (../Code/Inc/tf.h)(0x68452BB9)
 I (../Code/Inc/receiver.h)(0x685D555C)
-I (../Code/Inc/navigation.h)(0x68452BB9)
+I (../Code/Inc/navigation.h)(0x686E55F1)
 I (D:\Keilv5\ARM\ARMCC\include\string.h)(0x5E53505C)
-I (../Code/Inc/control.h)(0x68651C42)
+I (../Code/Inc/control.h)(0x686CE5D1)
 I (../Code/Inc/telemetry.h)(0x68452BB9)
 I (D:\Keilv5\ARM\ARMCC\include\stdio.h)(0x5E53505C)
 I (../Code/Inc/extf.h)(0x68452BB9)
@@ -181,7 +181,7 @@ I (../HardWare/FDILink/FDI_send.h)(0x68452BBA)
 I (../HardWare/FDILink/FDI_config.h)(0x68452BBA)
 I (../HardWare/FDILink/FDI_Search_Function.h)(0x68452BBA)
 I (../Core/Inc/stm32h7xx_it.h)(0x685D7194)
-I (../Code/Inc/navigation.h)(0x68452BB9)
+I (../Code/Inc/navigation.h)(0x686E55F1)
 I (D:\Keilv5\ARM\ARMCC\include\string.h)(0x5E53505C)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x685BC940)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x685BC940)
@@ -1986,7 +1986,7 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x685BC940
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x685BC940)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x685BC940)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/stream_buffer.h)(0x685BC940)
-F (../Middlewares/Third_Party/FreeRTOS/Source/tasks.c)(0x686518C7)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O1 -Otime --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../HardWare/FDILink -I ../FATFS/Target -I ../FATFS/App -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FatFs/src -I ../Code/Inc -I ../HardWare/SIYI-I.\RTE\_FlightControler-ID:\Keilv5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keilv5\ARM\PACK\Keil\STM32H7xx_DFP\3.1.1\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx-o fdi\tasks.o --omf_browse fdi\tasks.crf --depend fdi\tasks.d)
+F (../Middlewares/Third_Party/FreeRTOS/Source/tasks.c)(0x686E81E5)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O1 -Otime --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../HardWare/FDILink -I ../FATFS/Target -I ../FATFS/App -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FatFs/src -I ../Code/Inc -I ../HardWare/SIYI-I.\RTE\_FlightControler-ID:\Keilv5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keilv5\ARM\PACK\Keil\STM32H7xx_DFP\3.1.1\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx-o fdi\tasks.o --omf_browse fdi\tasks.crf --depend fdi\tasks.d)
 I (D:\Keilv5\ARM\ARMCC\include\stdlib.h)(0x5E53505C)
 I (D:\Keilv5\ARM\ARMCC\include\string.h)(0x5E53505C)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x685BC940)
@@ -2062,8 +2062,8 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x685BC940)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x685BC940)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x685BC940)
-F (..\Code\Src\control.c)(0x6865511F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../HardWare/FDILink -I ../FATFS/Target -I ../FATFS/App -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FatFs/src -I ../Code/Inc -I ../HardWare/SIYI-I.\RTE\_FlightControler-ID:\Keilv5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keilv5\ARM\PACK\Keil\STM32H7xx_DFP\3.1.1\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx-o fdi\control.o --omf_browse fdi\control.crf --depend fdi\control.d)
-I (../Code/Inc/control.h)(0x68651C42)
+F (..\Code\Src\control.c)(0x686E91C0)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../HardWare/FDILink -I ../FATFS/Target -I ../FATFS/App -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FatFs/src -I ../Code/Inc -I ../HardWare/SIYI-I.\RTE\_FlightControler-ID:\Keilv5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keilv5\ARM\PACK\Keil\STM32H7xx_DFP\3.1.1\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx-o fdi\control.o --omf_browse fdi\control.crf --depend fdi\control.d)
+I (../Code/Inc/control.h)(0x686CE5D1)
 I (../Core/Inc/main.h)(0x685D7381)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x685BC9C6)
 I (../Core/Inc/stm32h7xx_hal_conf.h)(0x68452BB9)
@@ -2123,7 +2123,7 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x685BC940)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x685BC940)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x685BC940)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x685BC940)
-I (../Code/Inc/navigation.h)(0x68452BB9)
+I (../Code/Inc/navigation.h)(0x686E55F1)
 I (D:\Keilv5\ARM\ARMCC\include\string.h)(0x5E53505C)
 I (../Code/Inc/receiver.h)(0x685D555C)
 I (../Code/Inc/taskinit.h)(0x68651C42)
@@ -2140,8 +2140,8 @@ I (../Code/Inc/tf.h)(0x68452BB9)
 I (../Code/Inc/telemetry.h)(0x68452BB9)
 I (D:\Keilv5\ARM\ARMCC\include\stdio.h)(0x5E53505C)
 I (../Code/Inc/extf.h)(0x68452BB9)
-F (..\Code\Src\navigation.c)(0x68452BB9)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../HardWare/FDILink -I ../FATFS/Target -I ../FATFS/App -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FatFs/src -I ../Code/Inc -I ../HardWare/SIYI-I.\RTE\_FlightControler-ID:\Keilv5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keilv5\ARM\PACK\Keil\STM32H7xx_DFP\3.1.1\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx-o fdi\navigation.o --omf_browse fdi\navigation.crf --depend fdi\navigation.d)
-I (../Code/Inc/navigation.h)(0x68452BB9)
+F (..\Code\Src\navigation.c)(0x686E69E7)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../HardWare/FDILink -I ../FATFS/Target -I ../FATFS/App -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FatFs/src -I ../Code/Inc -I ../HardWare/SIYI-I.\RTE\_FlightControler-ID:\Keilv5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keilv5\ARM\PACK\Keil\STM32H7xx_DFP\3.1.1\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx-o fdi\navigation.o --omf_browse fdi\navigation.crf --depend fdi\navigation.d)
+I (../Code/Inc/navigation.h)(0x686E55F1)
 I (../HardWare/FDILink/FDILink.h)(0x68452BBA)
 I (D:\Keilv5\ARM\ARMCC\include\stdint.h)(0x5E53505C)
 I (D:\Keilv5\ARM\ARMCC\include\string.h)(0x5E53505C)
@@ -2202,9 +2202,12 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x685BC940)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x685BC940)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x685BC940)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x685BC940)
+I (D:\Keilv5\ARM\ARMCC\include\stdio.h)(0x5E53505C)
+I (../Code/Inc/control.h)(0x686CE5D1)
+I (../Code/Inc/receiver.h)(0x685D555C)
 F (..\Code\Src\signal.c)(0x68452BB9)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../HardWare/FDILink -I ../FATFS/Target -I ../FATFS/App -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FatFs/src -I ../Code/Inc -I ../HardWare/SIYI-I.\RTE\_FlightControler-ID:\Keilv5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keilv5\ARM\PACK\Keil\STM32H7xx_DFP\3.1.1\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx-o fdi\signal.o --omf_browse fdi\signal.crf --depend fdi\signal.d)
 I (../Code/Inc/signal.h)(0x68452BB9)
-F (..\Code\Src\taskinit.c)(0x6865501F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../HardWare/FDILink -I ../FATFS/Target -I ../FATFS/App -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FatFs/src -I ../Code/Inc -I ../HardWare/SIYI-I.\RTE\_FlightControler-ID:\Keilv5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keilv5\ARM\PACK\Keil\STM32H7xx_DFP\3.1.1\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx-o fdi\taskinit.o --omf_browse fdi\taskinit.crf --depend fdi\taskinit.d)
+F (..\Code\Src\taskinit.c)(0x686E9338)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../HardWare/FDILink -I ../FATFS/Target -I ../FATFS/App -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FatFs/src -I ../Code/Inc -I ../HardWare/SIYI-I.\RTE\_FlightControler-ID:\Keilv5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keilv5\ARM\PACK\Keil\STM32H7xx_DFP\3.1.1\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx-o fdi\taskinit.o --omf_browse fdi\taskinit.crf --depend fdi\taskinit.d)
 I (../Code/Inc/taskinit.h)(0x68651C42)
 I (../Core/Inc/main.h)(0x685D7381)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x685BC9C6)
@@ -2276,13 +2279,13 @@ I (../Middlewares/Third_Party/FatFs/src/diskio.h)(0x685BC941)
 I (../FATFS/Target/sd_diskio.h)(0x68452BBA)
 I (../Code/Inc/tf.h)(0x68452BB9)
 I (../Code/Inc/receiver.h)(0x685D555C)
-I (../Code/Inc/navigation.h)(0x68452BB9)
+I (../Code/Inc/navigation.h)(0x686E55F1)
 I (D:\Keilv5\ARM\ARMCC\include\string.h)(0x5E53505C)
-I (../Code/Inc/control.h)(0x68651C42)
+I (../Code/Inc/control.h)(0x686CE5D1)
 I (../Code/Inc/telemetry.h)(0x68452BB9)
 I (D:\Keilv5\ARM\ARMCC\include\stdio.h)(0x5E53505C)
 I (../Code/Inc/extf.h)(0x68452BB9)
-F (..\Code\Src\telemetry.c)(0x68453FCB)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../HardWare/FDILink -I ../FATFS/Target -I ../FATFS/App -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FatFs/src -I ../Code/Inc -I ../HardWare/SIYI-I.\RTE\_FlightControler-ID:\Keilv5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keilv5\ARM\PACK\Keil\STM32H7xx_DFP\3.1.1\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx-o fdi\telemetry.o --omf_browse fdi\telemetry.crf --depend fdi\telemetry.d)
+F (..\Code\Src\telemetry.c)(0x686CE7F9)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../HardWare/FDILink -I ../FATFS/Target -I ../FATFS/App -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FatFs/src -I ../Code/Inc -I ../HardWare/SIYI-I.\RTE\_FlightControler-ID:\Keilv5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keilv5\ARM\PACK\Keil\STM32H7xx_DFP\3.1.1\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx-o fdi\telemetry.o --omf_browse fdi\telemetry.crf --depend fdi\telemetry.d)
 I (../Code/Inc/telemetry.h)(0x68452BB9)
 I (../Core/Inc/main.h)(0x685D7381)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x685BC9C6)
@@ -2330,7 +2333,7 @@ I (../HardWare/FDILink/FDI_send.h)(0x68452BBA)
 I (../HardWare/FDILink/FDI_config.h)(0x68452BBA)
 I (../HardWare/FDILink/FDI_Search_Function.h)(0x68452BBA)
 I (D:\Keilv5\ARM\ARMCC\include\stdio.h)(0x5E53505C)
-I (../Code/Inc/navigation.h)(0x68452BB9)
+I (../Code/Inc/navigation.h)(0x686E55F1)
 I (D:\Keilv5\ARM\ARMCC\include\string.h)(0x5E53505C)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x685BC940)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x685BC940)
@@ -2346,6 +2349,8 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x685BC940)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x685BC940)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x685BC940)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x685BC940)
+I (../Code/Inc/control.h)(0x686CE5D1)
+I (../Code/Inc/receiver.h)(0x685D555C)
 F (..\Code\Src\tf.c)(0x68452BB9)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../HardWare/FDILink -I ../FATFS/Target -I ../FATFS/App -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FatFs/src -I ../Code/Inc -I ../HardWare/SIYI-I.\RTE\_FlightControler-ID:\Keilv5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keilv5\ARM\PACK\Keil\STM32H7xx_DFP\3.1.1\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx-o fdi\tf.o --omf_browse fdi\tf.crf --depend fdi\tf.d)
 I (../Code/Inc/tf.h)(0x68452BB9)
 I (../FATFS/App/fatfs.h)(0x68452BBA)
@@ -2479,9 +2484,9 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x685BC940)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x685BC940)
 I (../HardWare/SIYI/siyi.h)(0x68452BBA)
 I (D:\Keilv5\ARM\ARMCC\include\string.h)(0x5E53505C)
-I (../Code/Inc/control.h)(0x68651C42)
-I (../Code/Inc/navigation.h)(0x68452BB9)
-F (..\Code\Src\extf.c)(0x685D2BF8)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../HardWare/FDILink -I ../FATFS/Target -I ../FATFS/App -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FatFs/src -I ../Code/Inc -I ../HardWare/SIYI-I.\RTE\_FlightControler-ID:\Keilv5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keilv5\ARM\PACK\Keil\STM32H7xx_DFP\3.1.1\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx-o fdi\extf.o --omf_browse fdi\extf.crf --depend fdi\extf.d)
+I (../Code/Inc/control.h)(0x686CE5D1)
+I (../Code/Inc/navigation.h)(0x686E55F1)
+F (..\Code\Src\extf.c)(0x686CE7F9)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../HardWare/FDILink -I ../FATFS/Target -I ../FATFS/App -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FatFs/src -I ../Code/Inc -I ../HardWare/SIYI-I.\RTE\_FlightControler-ID:\Keilv5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keilv5\ARM\PACK\Keil\STM32H7xx_DFP\3.1.1\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx-o fdi\extf.o --omf_browse fdi\extf.crf --depend fdi\extf.d)
 I (../Code/Inc/extf.h)(0x68452BB9)
 I (../Core/Inc/main.h)(0x685D7381)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x685BC9C6)
@@ -2529,7 +2534,7 @@ I (../HardWare/FDILink/FDI_send.h)(0x68452BBA)
 I (../HardWare/FDILink/FDI_config.h)(0x68452BBA)
 I (../HardWare/FDILink/FDI_Search_Function.h)(0x68452BBA)
 I (D:\Keilv5\ARM\ARMCC\include\stdio.h)(0x5E53505C)
-I (../Code/Inc/navigation.h)(0x68452BB9)
+I (../Code/Inc/navigation.h)(0x686E55F1)
 I (D:\Keilv5\ARM\ARMCC\include\string.h)(0x5E53505C)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x685BC940)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x685BC940)
@@ -2545,6 +2550,8 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x685BC940)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x685BC940)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x685BC940)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x685BC940)
+I (../Code/Inc/control.h)(0x686CE5D1)
+I (../Code/Inc/receiver.h)(0x685D555C)
 F (..\Code\Inc\extf.h)(0x68452BB9)()
 F (..\HardWare\FDILink\CRC_Table.c)(0x68452BBA)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../HardWare/FDILink -I ../FATFS/Target -I ../FATFS/App -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FatFs/src -I ../Code/Inc -I ../HardWare/SIYI-I.\RTE\_FlightControler-ID:\Keilv5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keilv5\ARM\PACK\Keil\STM32H7xx_DFP\3.1.1\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx-o fdi\crc_table.o --omf_browse fdi\crc_table.crf --depend fdi\crc_table.d)
 I (D:\Keilv5\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -2594,7 +2601,7 @@ I (../HardWare/FDILink/FDILink.h)(0x68452BBA)
 I (../HardWare/FDILink/FDI_send.h)(0x68452BBA)
 I (../HardWare/FDILink/FDI_config.h)(0x68452BBA)
 I (../HardWare/FDILink/FDI_Search_Function.h)(0x68452BBA)
-I (../Code/Inc/navigation.h)(0x68452BB9)
+I (../Code/Inc/navigation.h)(0x686E55F1)
 I (D:\Keilv5\ARM\ARMCC\include\string.h)(0x5E53505C)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x685BC940)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x685BC940)

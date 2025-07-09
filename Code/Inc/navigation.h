@@ -10,6 +10,31 @@
 
 #define NavDMARecLength 500
 
+#define PI 3.14159265358979323846
+#define EARTH_RADIUS 6378137.0         // 地球长半轴 (WGS84)
+#define EARTH_ECCEN 0.081819190842622 // 地球第一偏心率 (WGS84)
+
+typedef struct {
+    double x; // ECEF X坐标 (米)
+    double y; // ECEF Y坐标 (米)
+    double z; // ECEF Z坐标 (米)
+} ECEF_Coord;
+
+typedef struct {
+    double lon; // 经度 (度)
+    double lat; // 纬度 (度)
+    double alt; // 高度 (米)
+} LLA_Coord;
+
+typedef struct {
+    double east;  // 东向距离 (米)
+    double north; // 北向距离 (米)
+    double up;    // 天向距离 (米)
+} ENU_Coord;
+
+extern ENU_Coord enu; 
+
+
 extern uint8_t NavRecBuff[];
 extern uint8_t NavRecFifoBuff[];
 extern uint16_t NavRecLength;
@@ -58,5 +83,10 @@ extern SemaphoreHandle_t NavSemaphore;//导航任务二值信号量
 extern BaseType_t NavHigherTaskSwitch;
 
 void NavigationSolution(void);
+
+ECEF_Coord lla_to_ecef(LLA_Coord lla);
+ENU_Coord ecef_to_enu(ECEF_Coord p, ECEF_Coord p0, LLA_Coord lla0);
+
+void LocalCcoordinate(void);
 	
 #endif

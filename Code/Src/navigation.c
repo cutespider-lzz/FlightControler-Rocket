@@ -1,9 +1,18 @@
 #include "navigation.h"
+#include <stdio.h>
+#include "control.h"
 
 uint8_t NavRecBuff[500];
 uint8_t NavRecFifoBuff[500];
 uint16_t NavRecLength;
 uint16_t NavFifoLength;
+
+#define PI 3.14159265358979323846
+#define EARTH_RADIUS 6378137.0         // 地球长半轴 (WGS84)
+#define EARTH_ECCEN 0.081819190842622 // 地球第一偏心率 (WGS84)
+
+ENU_Coord enu;  // 定义全局ENU坐标变量
+LLA_Coord p_lla,p0_lla;
 
 FDILink_VersionData_Packet_t VersionData;
 FDILink_IMUData_Packet_t IMUData;
@@ -52,4 +61,68 @@ void NavigationSolution(void)
 	fdiComProtocolReceive(&_FDILink, NavRecFifoBuff, NavRecLength);
 }
 
+// 将LLA坐标转换为ECEF坐标
+ECEF_Coord lla_to_ecef(LLA_Coord lla) {
+    double lat_rad = lla.lat;
+    double lon_rad = lla.lon;
+    double N = EARTH_RADIUS / sqrt(1.0 - EARTH_ECCEN * EARTH_ECCEN * sin(lat_rad) * sin(lat_rad));
+    
+    ECEF_Coord ecef;
+    ecef.x = (N + lla.alt) * cos(lat_rad) * cos(lon_rad);
+    ecef.y = (N + lla.alt) * cos(lat_rad) * sin(lon_rad);
+    ecef.z = (N * (1.0 - EARTH_ECCEN * EARTH_ECCEN) + lla.alt) * sin(lat_rad);
+    
+    return ecef;
+}
 
+// 计算P相对于P0的ENU坐标
+ENU_Coord ecef_to_enu(ECEF_Coord p, ECEF_Coord p0, LLA_Coord lla0) {
+    // 将参考点LLA转换为弧度
+    double lat_rad = lla0.lat;
+    double lon_rad = lla0.lon;
+    
+    // 计算ECEF到ENU的旋转矩阵元素
+    double sin_lat = sin(lat_rad);
+    double cos_lat = cos(lat_rad);
+    double sin_lon = sin(lon_rad);
+    double cos_lon = cos(lon_rad);
+    
+    // 计算P相对于P0的ECEF坐标差
+    double dx = p.x - p0.x;
+    double dy = p.y - p0.y;
+    double dz = p.z - p0.z;
+    
+    // 应用旋转矩阵得到ENU坐标
+    ENU_Coord enu;
+    enu.east  = -sin_lon * dx + cos_lon * dy;
+    enu.north = -sin_lat * cos_lon * dx - sin_lat * sin_lon * dy + cos_lat * dz;
+    enu.up    = cos_lat * cos_lon * dx + cos_lat * sin_lon * dy + sin_lat * dz;
+    
+    return enu;
+}
+
+
+
+void LocalCcoordinate(void)
+{
+
+    // 初始化参考点（仅在第一次或ControlTime为0时更新）
+    if(ControlTime == 0){
+        p0_lla.lon = Geodetic_Position_data.Longitude;
+        p0_lla.lat = Geodetic_Position_data.Latitude;
+        p0_lla.alt = Geodetic_Position_data.Height;
+    }
+    
+    // 当前点经纬高
+        p_lla.lon = Geodetic_Position_data.Longitude;
+        p_lla.lat = Geodetic_Position_data.Latitude;
+        p_lla.alt = Geodetic_Position_data.Height;
+ 
+    
+    // 转换为ECEF坐标
+    ECEF_Coord p0_ecef = lla_to_ecef(p0_lla);
+    ECEF_Coord p_ecef = lla_to_ecef(p_lla);
+    
+    // 计算ENU坐标（更新全局enu变量）
+    enu = ecef_to_enu(p_ecef, p0_ecef, p0_lla);
+}

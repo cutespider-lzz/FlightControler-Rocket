@@ -62,3 +62,8 @@ fdi\navigation.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 fdi\navigation.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 fdi\navigation.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 fdi\navigation.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
+fdi\navigation.o: D:\Keilv5\ARM\ARMCC\Bin\..\include\stdio.h
+fdi\navigation.o: ../Code/Inc/control.h
+fdi\navigation.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+fdi\navigation.o: ../Code/Inc/receiver.h
+fdi\navigation.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
